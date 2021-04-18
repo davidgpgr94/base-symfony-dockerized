@@ -18,9 +18,11 @@ services:
     container_name: symfony-php
     environment:
       APP_ENV: dev
-      # DATABASE_URL: mysql://symfony_user:symfony_password@mysql:3306/symfony_db?serverVersion=5.7
+      DATABASE_URL: mysql://symfony_user:symfony_password@mysql:3306/symfony_db?serverVersion=8.0
     volumes:
       - ./symfony/:/var/www/symfony/
+    ports:
+      - 8002:8000
     networks:
       - symfony
     depends_on:
